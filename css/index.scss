@@ -1,0 +1,570 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap');
+
+
+* {
+
+  box-sizing: border-box;
+}
+
+:root {
+  --dark: #1a1a1b;
+  --primary: #333F44;
+  --mid-teal: #37AA9C;
+  --light-teal: #94F3E4;
+  --white: #faf8f8;
+  --pink: #fd367e;
+  --light-grey: #778899FF;
+  //--contrast: #fd367e;
+  font-family: Poppins, sans-serif, cursive;
+
+
+}
+
+.m0 {
+  margin: 0;
+}
+
+p, .text-white {
+  color: var(--white);
+}
+.light-teal{
+  color: var(--light-teal);
+}
+a {
+  text-decoration: none;
+}
+
+section {
+
+}
+
+body {
+  background-color: black;
+}
+
+.bebas {
+  font-family: "Bebas Neue", sans-serif;
+}
+
+
+.bold {
+  font-size: 1.8rem;
+}
+
+.bolder {
+  font-size: 2.6rem;
+}
+
+.text-center {
+  width: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.pink {
+  color: var(--pink);
+}
+
+#welcome-section {
+  min-height: 100vh;
+  position: relative;
+
+
+  nav {
+    display: flex;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    justify-content: space-between;
+
+    .nav-logo {
+      font-size: 1.5rem;
+      font-weight: 600;
+      font-family: "Bebas Neue", sans-serif;
+      color: var(--pink);
+    }
+
+    .nav-link-parent {
+      display: flex;
+      justify-content: space-between;
+      list-style: none;
+
+      .nav-link {
+        padding-left: .5rem;
+        padding-right: .5rem;
+
+        .link {
+          color: var(--white);
+        }
+
+      }
+
+    }
+
+  }
+
+  .blob-container {
+    position: absolute;
+    min-width: 100vw;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    top: 0;
+    left: 0;
+
+    svg {
+      width: 80vw;
+      max-width: 500px;
+    }
+  }
+
+  .welcome-content {
+    display: grid;
+    min-width: 100vw;
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    place-items: center;
+    color: var(--white);
+
+    .welcome-content-title {
+      width: 50%;
+
+      #welcome-title {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .waves {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    max-height: 30vh;
+
+    svg {
+      //position: absolute;
+      width: 100vw;
+
+    }
+  }
+
+
+}
+
+#skill-section {
+  min-height: 100vh;
+  width: 100vw;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  --iphone-width: 80vw;
+  --imac-width: 70vw;
+
+  .waves {
+    position: absolute;
+    z-index: -1;
+
+    svg {
+      width: 100vw;
+    }
+  }
+
+  .phone-section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    padding: 5%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    place-items: center;
+
+    .iphone-container {
+      display: grid;
+      place-items: center;
+      position: relative;
+      aspect-ratio: 1232/608;
+      width: var(--iphone-width);
+
+      .iphone {
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        width: var(--iphone-width);
+        aspect-ratio: 1232/608;
+
+        .iphone-screen {
+          position: absolute;
+          top: 4%;
+          left: 2%;
+          width: 96%;
+          height: 92%;
+          border-radius: 11%;
+          background-color: white;
+          display: flex;
+
+        }
+
+        .icon-wrapper {
+          top: 4%;
+          left: 2%;
+          width: 96%;
+          height: 92%;
+          border-radius: 11%;
+          position: absolute;
+          overflow-x: hidden;
+
+          .icon-parent {
+            height: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            place-items: center;
+            grid-auto-flow: column;
+            grid-template-rows: 1fr;
+
+            .device-icon {
+              height: 80%;
+
+            }
+          }
+        }
+
+        .device-frame {
+          max-width: var(--iphone-width);
+          position: absolute;
+          top: 0;
+          left: 0;
+
+        }
+      }
+
+    }
+
+
+    .iphone-content {
+      //height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      position: relative;
+
+      .text-1 {
+
+      }
+
+      .text-2 {
+        display: none;
+      }
+    }
+
+
+  }
+
+  .imac-section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    padding: 5%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    place-items: center;
+
+    .imac-container {
+      display: grid;
+      place-items: center;
+      position: relative;
+      aspect-ratio: 987/831;
+      width: 100%;
+      //height: 100%;
+
+
+      .imac {
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        width: 75%;
+        max-width: 70vw;
+        //height: 50%;
+        //max-height: 50vh;
+        aspect-ratio: 987/831;
+
+        .imac-screen {
+          position: absolute;
+          top: 3%;
+          left: 3%;
+          width: 96%;
+          height: 65%;
+          //border-radius: 11%;
+          background-color: white;
+          display: flex;
+
+        }
+
+        .icon-wrapper {
+          top: 3%;
+          left: 3%;
+          width: 96%;
+          height: 65%;
+          position: absolute;
+          overflow-x: hidden;
+
+          .icon-parent {
+            height: 100%;
+            position: relative;
+            display: grid;
+            //flex-direction: row;
+            place-items: center;
+            //grid-auto-flow: row;
+            grid-template-columns: 1fr 1fr 1fr;
+
+            .device-icon {
+              width: 80%;
+
+            }
+          }
+        }
+
+        .device-frame {
+          //max-width: var(--imac-width);
+          width: 100%;
+          position: absolute;
+          aspect-ratio: 987/831;
+          top: 0;
+          left: 0;
+
+        }
+      }
+
+    }
+
+    .imac-content {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      position: relative;
+
+      .text-1 {
+
+      }
+
+      .text-2 {
+        //display: none;
+      }
+    }
+
+    //img {
+    //  width: 80vw;
+    //}
+  }
+
+}
+
+#hm-section {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+
+  .parent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 90vw;
+    max-height: 70vh;
+
+
+    #hm_intro_vid, #hm_intro_fall_back {
+      position: relative;
+      border-radius: 0.5rem;
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 1920/1080;
+    }
+
+    #hm_ipad_mockup {
+      height: 100%;
+      //width: 100%;
+      display: flex;
+      position: absolute;
+      transform: scale(.30);
+      aspect-ratio: 1281/1736;
+      left: 47%;
+      top: 18%;
+    }
+
+    #hm_mac_overlay {
+      width: 100%;
+      display: flex;
+      position: absolute;
+      transform: scale(0.333);
+      aspect-ratio: 2696 / 1636;
+      top: 15%;
+      left: 1%;
+
+    }
+
+    #hm_overlay_final {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transform: scale(0.354);
+      max-width: 94%;
+      aspect-ratio: 2696 / 1636;
+      top: 18.9%;
+      left: 4%;
+      //clip-path: inset(0 0 100% 100%);
+
+    }
+
+
+    #hm_iphone_mockup {
+      height: 100%;
+      transform: scale(.25);
+      position: absolute;
+      aspect-ratio: 543/1030;
+      top: 25%;
+      left: 52%;
+      //opacity: 0;
+    }
+
+
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 15%;
+    padding-right: 15%;
+    text-align: center;
+
+  }
+}
+
+#contact-section {
+
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .social-icons-parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+
+    .social-icon {
+
+      svg {
+        fill: var(--pink);
+        width: 60px;
+        height: 69px;
+
+        path {
+          fill: var(--pink);
+        }
+      }
+
+    }
+
+    .linkedin {
+      width: 100%;
+      height: 100%;
+
+      svg {
+        height: 80%;
+      }
+    }
+  }
+
+  .contact-info {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .contact-parent {
+      display: flex;
+      row-gap: 15px;
+      flex-direction: column;
+
+    }
+
+    .contact-link {
+      display: flex;
+      column-gap: 15px;
+
+      a {
+        font-size: 1.2rem;
+        color: var(--white);
+      }
+
+      svg {
+        min-width: 30px;
+        min-height: 30px;
+        fill: var(--pink);
+      }
+
+    }
+  }
+}
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+  #welcome-section {
+    .welcome-content {
+      .welcome-content-title {
+        width: unset;
+      }
+    }
+  }
+  #skill-section {
+    --iphone-width: 55vw;
+
+    .imac-section {
+      .imac-container {
+        .imac {
+          width: 65%;
+          //max-width: 50vw;
+          //height: 60%;
+        }
+      }
+
+    }
+
+
+  }
+
+
+}
+
+@media only screen and (min-width: 55em) {
+  #skill-section {
+    .imac-section {
+      .imac-container {
+        .imac {
+          width: 50%;
+          //max-width: 50vw;
+          //height: 60%;
+        }
+      }
+
+    }
+
+  }
+}
