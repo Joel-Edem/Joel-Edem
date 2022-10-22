@@ -27,7 +27,7 @@
 <body>
 
 <!-- Add your site or application content here -->
-<main>
+<main id="main">
   <section id="welcome-section">
     <nav class="nav-main">
       <h1 class="nav-logo">Joel Edem</h1>
@@ -104,7 +104,7 @@
 
   </section>
 
-  <section id="skill-section">
+  <section id="phone-section" class="skill-section">
     <div class="waves">
       <svg id="wave-top" viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg"
            xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
@@ -127,7 +127,7 @@
     </div>
     <div class="phone-section">
       <div class="iphone-container">
-        <div class="iphone">
+        <div class="iphone" id="iphone">
           <div class="iphone-screen"></div>
           <div class="icon-wrapper">
             <div class="icon-parent">
@@ -171,7 +171,7 @@
 
 
       </div>
-      <div class="iphone-content">
+      <div class="iphone-content ">
         <p class="text-1">
           I design and <br/>build
           <span class="bebas bold pink">front-end</span> & <br/>
@@ -183,9 +183,11 @@
       </div>
     </div>
 
+  </section>
+  <section id="mac-section" class="skill-section">
     <div class="imac-section">
       <div class="imac-container">
-        <div class="imac">
+        <div id="imac" class="imac ">
           <div class="imac-screen"></div>
           <div class="icon-wrapper">
             <div class="icon-parent">
@@ -240,7 +242,7 @@
         </div>
       </div>
 
-      <div class="imac-content">
+      <div class="imac-content ">
         <p class="text-2">
           I create beautiful and <br>
           secure <span class="bebas bold pink">Applications</span>
@@ -254,10 +256,10 @@
     </div>
 
   </section>
-
+  <div class="mac-padding-box" ></div>
   <section id="hm-section">
-    <h3 class="bebas bold pink m0">HouseMaster</h3>
-    <div class="parent">
+    <h3 id="hm-heading" class="bebas bold pink m0">HouseMaster</h3>
+    <div id="hm-parent" class="parent">
       <video playsinline
              autoplay
              muted
@@ -278,34 +280,37 @@
 
       <img src="./img/ipad_mockup-min.png "
            alt="photo of HouseMaster Ghana home page"
+           class=" "
            id="hm_ipad_mockup">
       <img src="./img/mac_mockup_initial-min.png"
            alt="photo of HouseMaster sign in page"
+           class=" "
            id="hm_mac_overlay">
       <img src="./img/mac_mockup_final-min.png"
            alt="photo of HouseMaster Home in page"
+           class=" "
            id="hm_overlay_final">
       <img src="./img/iphone_mockup-min.png"
            alt="photo of HouseMaster Ghana dashboard"
            id="hm_iphone_mockup"
-           class="slide-child secondary">
+           class=" hide">
 
     </div>
-    <div class="content">
+    <div id="hm-text-content"class="content">
 
       <p class=" ">
         <span class="pink">HouseMaster.house</span> is a Real estate listing platform which
         connects property owners to property seekers.
       </p>
-      <a href="#" class="btn ">
+      <a href="#" class="btn hm-btn">
         Learn More
       </a>
     </div>
   </section>
-
+<div class="mac-padding-box" ></div>
   <section id="contact-section">
 
-    <h1 class="bebas text-white bolder">
+    <h1 class="bebas text-white bolder  contact-section-heading">
       Find Me Online
     </h1>
     <div class="social-icons-parent">
@@ -360,8 +365,8 @@
     </div>
 
     <div class="contact-info">
-      <h1 class="bold text-white text-center">
-        or
+      <h1  class="bold text-white text-center contact-section-heading">
+        Get In Touch
       </h1>
       <div class="contact-parent">
         <div class="contact-link">
@@ -370,7 +375,7 @@
               <path
                 d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
             </svg>
-          <a class="text-white" href="#"
+          <a class="text-white email-detail link-btn contact-link-btn" href="#"  type="button"
              data-link="mailto:joelametepeh@gmail.com">
             view my email
           </a>
@@ -383,7 +388,7 @@
                     d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
             </svg>
 
-          <a class="phone-num-detail link-btn " type="button" href="#" data-link="tel:+233571857412">
+          <a class="phone-num-detail link-btn  contact-link-btn" type="button" href="#" data-link="tel:+233571857412">
             View my phone number
           </a>
         </div>
@@ -399,7 +404,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
 <script src="js/vendor/modernizr-3.11.2.min.js"></script>
 <script src="js/plugins.js"></script>
-<script src="js/main.js"></script>
+<script async defer src="js/main.js"></script>
 
 </body>
 

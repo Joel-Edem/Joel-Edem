@@ -57,9 +57,18 @@ body {
   color: var(--pink);
 }
 
+.hide {
+  opacity: 0;
+}
+
+.mac-padding-box {
+  height: 55vh;
+  width: 100vw;
+}
+
 #welcome-section {
-  min-height: 100vh;
-  position: relative;
+  height: 100vh;
+  display: block;
 }
 #welcome-section nav {
   display: flex;
@@ -126,23 +135,22 @@ body {
   width: 100vw;
 }
 
-#skill-section {
-  min-height: 100vh;
+.skill-section {
+  height: 100vh;
   width: 100vw;
-  position: relative;
-  display: flex;
   flex-direction: column;
   --iphone-width: 80vw;
   --imac-width: 70vw;
 }
-#skill-section .waves {
+.skill-section .waves {
   position: absolute;
-  z-index: -1;
 }
-#skill-section .waves svg {
+.skill-section .waves svg {
   width: 100vw;
 }
-#skill-section .phone-section {
+
+.phone-section {
+  background-color: black;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -151,22 +159,23 @@ body {
   align-items: center;
   justify-content: center;
   place-items: center;
+  overflow: hidden;
 }
-#skill-section .phone-section .iphone-container {
+.phone-section .iphone-container {
   display: grid;
   place-items: center;
   position: relative;
   aspect-ratio: 1232/608;
   width: var(--iphone-width);
 }
-#skill-section .phone-section .iphone-container .iphone {
+.phone-section .iphone-container .iphone {
   display: flex;
   position: absolute;
   flex-direction: column;
   width: var(--iphone-width);
   aspect-ratio: 1232/608;
 }
-#skill-section .phone-section .iphone-container .iphone .iphone-screen {
+.phone-section .iphone-container .iphone .iphone-screen {
   position: absolute;
   top: 4%;
   left: 2%;
@@ -176,7 +185,7 @@ body {
   background-color: white;
   display: flex;
 }
-#skill-section .phone-section .iphone-container .iphone .icon-wrapper {
+.phone-section .iphone-container .iphone .icon-wrapper {
   top: 4%;
   left: 2%;
   width: 96%;
@@ -185,7 +194,7 @@ body {
   position: absolute;
   overflow-x: hidden;
 }
-#skill-section .phone-section .iphone-container .iphone .icon-wrapper .icon-parent {
+.phone-section .iphone-container .iphone .icon-wrapper .icon-parent {
   height: 100%;
   position: relative;
   display: flex;
@@ -194,25 +203,26 @@ body {
   grid-auto-flow: column;
   grid-template-rows: 1fr;
 }
-#skill-section .phone-section .iphone-container .iphone .icon-wrapper .icon-parent .device-icon {
+.phone-section .iphone-container .iphone .icon-wrapper .icon-parent .device-icon {
   height: 80%;
 }
-#skill-section .phone-section .iphone-container .iphone .device-frame {
+.phone-section .iphone-container .iphone .device-frame {
   max-width: var(--iphone-width);
   position: absolute;
   top: 0;
   left: 0;
 }
-#skill-section .phone-section .iphone-content {
+.phone-section .iphone-content {
   width: 100%;
   display: flex;
   justify-content: center;
   position: relative;
 }
-#skill-section .phone-section .iphone-content .text-2 {
+.phone-section .iphone-content .text-2 {
   display: none;
 }
-#skill-section .imac-section {
+
+.imac-section {
   width: 100%;
   height: 100vh;
   display: flex;
@@ -222,14 +232,14 @@ body {
   justify-content: center;
   place-items: center;
 }
-#skill-section .imac-section .imac-container {
+.imac-section .imac-container {
   display: grid;
   place-items: center;
   position: relative;
   aspect-ratio: 987/831;
   width: 100%;
 }
-#skill-section .imac-section .imac-container .imac {
+.imac-section .imac-container .imac {
   display: flex;
   position: absolute;
   flex-direction: column;
@@ -237,7 +247,7 @@ body {
   max-width: 70vw;
   aspect-ratio: 987/831;
 }
-#skill-section .imac-section .imac-container .imac .imac-screen {
+.imac-section .imac-container .imac .imac-screen {
   position: absolute;
   top: 3%;
   left: 3%;
@@ -246,7 +256,7 @@ body {
   background-color: white;
   display: flex;
 }
-#skill-section .imac-section .imac-container .imac .icon-wrapper {
+.imac-section .imac-container .imac .icon-wrapper {
   top: 3%;
   left: 3%;
   width: 96%;
@@ -254,24 +264,24 @@ body {
   position: absolute;
   overflow-x: hidden;
 }
-#skill-section .imac-section .imac-container .imac .icon-wrapper .icon-parent {
+.imac-section .imac-container .imac .icon-wrapper .icon-parent {
   height: 100%;
   position: relative;
   display: grid;
   place-items: center;
   grid-template-columns: 1fr 1fr 1fr;
 }
-#skill-section .imac-section .imac-container .imac .icon-wrapper .icon-parent .device-icon {
+.imac-section .imac-container .imac .icon-wrapper .icon-parent .device-icon {
   width: 80%;
 }
-#skill-section .imac-section .imac-container .imac .device-frame {
+.imac-section .imac-container .imac .device-frame {
   width: 100%;
   position: absolute;
   aspect-ratio: 987/831;
   top: 0;
   left: 0;
 }
-#skill-section .imac-section .imac-content {
+.imac-section .imac-content {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -285,6 +295,8 @@ body {
   position: relative;
   justify-content: center;
   align-items: center;
+  background-color: black;
+  overflow: hidden;
 }
 #hm-section .parent {
   display: flex;
@@ -337,6 +349,16 @@ body {
   top: 25%;
   left: 52%;
 }
+#hm-section .hm-btn {
+  background-color: var(--pink);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all ease 0.3s;
+}
+#hm-section .hm-btn:hover {
+  box-shadow: #fd367e 4px 4px 10px, #fd367e 0px 2px 2px;
+}
 #hm-section .content {
   display: flex;
   flex-direction: column;
@@ -354,6 +376,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: black;
 }
 #contact-section .social-icons-parent {
   display: flex;
@@ -408,16 +431,21 @@ body {
     width: unset;
   }
 
-  #skill-section {
-    --iphone-width: 55vw;
+  .skill-section {
+    --iphone-width: 50vw;
   }
-  #skill-section .imac-section .imac-container .imac {
+  .skill-section .imac-section .imac-container .imac {
     width: 65%;
   }
 }
 @media only screen and (min-width: 55em) {
-  #skill-section .imac-section .imac-container .imac {
+  .skill-section .imac-section .imac-container .imac {
     width: 50%;
+  }
+
+  .mac-padding-box {
+    height: 100vh;
+    width: 100vw;
   }
 }
 
