@@ -153,7 +153,7 @@ const hm_tl = ScrollTrigger.create(
 const hm_scrub = gsap.timeline({
   scrollTrigger: {
 
-    markers: true,
+    // markers: true,
     pinSpacing: false,
     // pin: true,
     scrub: .5,
