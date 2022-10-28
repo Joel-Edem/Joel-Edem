@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap");
 * {
   box-sizing: border-box;
 }
@@ -36,6 +35,11 @@ body {
 
 .bebas {
   font-family: "Bebas Neue", sans-serif;
+}
+
+.h1 {
+  font-size: 2em;
+  font-weight: bold;
 }
 
 .bold {
@@ -350,14 +354,15 @@ body {
   left: 52%;
 }
 #hm-section .hm-btn {
-  background-color: var(--pink);
+  background-color: black;
+  border: 2px solid var(--pink);
   color: var(--white);
   padding: 0.5rem 1rem;
   border-radius: 8px;
   transition: all ease 0.3s;
 }
 #hm-section .hm-btn:hover {
-  box-shadow: #fd367e 4px 4px 10px, #fd367e 0px 2px 2px;
+  box-shadow: rgba(252, 53, 126, 0.5) 4px 4px 20px, #fd367e 0px 2px 4px;
 }
 #hm-section .content {
   display: flex;

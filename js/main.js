@@ -44,7 +44,7 @@ const phone_pin = gsap.timeline({
     endTrigger: "#hm-section",
     end: "top top",
   }
-}).set('.iphone-content', {display:"none"})
+})
 
 const phone_tl = gsap.timeline({
   scrollTrigger: {
@@ -53,7 +53,7 @@ const phone_tl = gsap.timeline({
     toggleActions: "play none none reverse",
 
   }
-}).set('.iphone-content', {display:'flex'})
+})
   .from(phone_el, {rotate: 90, ease: "back", duration: 1, scale:.8})
   .from(phone_el.querySelectorAll(".device-icon"),
     {rotate: -90, transformOrigin: "50% 50%", ease: "back", duration: 1}, "<+.1")
@@ -93,7 +93,7 @@ const imac_trigger = ScrollTrigger.create(
         {scale: 1.1, opacity: 0, top: "-10%", duration: .3},
         {scale: .9, opacity: 1, top: "10%"}
       )
-      .fromTo(".iphone-content", {scale: 1, opacity: 1,}, {scale: .5, opacity: 0, duration: .3,}, "<-.3")
+      .fromTo(".iphone-content", {scale: 1, opacity: 1,}, {scale: 0, opacity: 0, duration: .3,}, "<-.3")
       .fromTo(".imac-content ", {y: "-50%", opacity: 0}, {y: 0, opacity: 1})
       .fromTo(imac.querySelectorAll(".device-icon"),
         {opacity: 0, y: 10}, {stagger: {each: 0.1}, opacity: 100, y: 0,}, "<"),
