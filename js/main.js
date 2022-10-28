@@ -4,46 +4,62 @@ const blob_anim = KUTE.fromTo(
   {path: "#blob2"},
   {repeat: 999, duration: 3000, yoyo: true})
 
-const t1 = ScrollTrigger.create(
-  {
+
+const welcome_tl = gsap.timeline({
+  scrollTrigger: {
     trigger: "#welcome-section",
-    pinSpacing: false,
-    pin: true,
-    animation: gsap.timeline().from("#blob",   // BLOB ANIMATION
-      {
-        y: "-100vh", onComplete: () => {
-          blob_anim.start()
-        }, scale: 1, duration: 2.5, ease: 'back'
-      }
-    ).fromTo(document.querySelectorAll(".content-body"), // WELCOME SECTION TEXT ANIMATION
-      {y: "-100%", opacity: 0},
-      {y: 0, opacity: "100%", duration: 2, ease: "power2.easeIn"}, "<+.5")
-      .fromTo(document.querySelectorAll(".content-title"),
-        {opacity: 0, x: "-30%"},
-        {opacity: "100%", x: 0, duration: 2, ease: "power2"}, "<+.5")
-
-
+    pin: "#welcome-section",
+    preventOverlaps: true,
+    fastScrollEnd: true,
+    start: "top top",
+    pinSpacing: false
   }
-)
+})
+  .from("#blob",   // BLOB ANIMATION
+  {
+    y: "-100vh", onComplete: () => {
+      console.log("complete")
+      blob_anim.start()
+      console.log('starting')
+    }, scale: 1, duration: 2.5, ease: 'back'
+  }
+).fromTo(document.querySelectorAll(".content-body"), // WELCOME SECTION TEXT ANIMATION
+  {y: "-100%", opacity: 0},
+  {y: 0, opacity: "100%", duration: 2, ease: "power2.easeIn"}, "<+.5")
+  .fromTo(document.querySelectorAll(".content-title"),
+    {opacity: 0, x: "-30%"},
+    {opacity: "100%", x: 0, duration: 2, ease: "power2"}, "<+.5")
+
+
 
 const phone_el = document.querySelector("#iphone")
 const icon_parent_el = phone_el.querySelector(".icon-parent")
-const phone_tl = ScrollTrigger.create({
 
-  trigger: "#phone-section",
-  start: "top top",
-  endTrigger: "#hm-section",
-  end: "top top",
-  pinSpacing: false,
-  toggleActions: "play none none reverse",
-  pin: true,
-  animation: gsap.timeline().from(phone_el, {rotate: 90, ease: "back", duration: 1,})
-    .from(phone_el.querySelectorAll(".device-icon"),
-      {rotate: -90, transformOrigin: "50% 50%", ease: "back", duration: 1}, "<+.1")
-    .from('.iphone-content', {bottom: 0, opacity: 0, duration: .5}, "<-.1")
-    .to("#iphone", {scale: .9, ease: "power2", duration: 1.5,}, "<.2")
+const phone_pin = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#phone-section",
+    start: "top top",
+    pin: "#phone-section",
+    pinSpacing: false,
+    endTrigger: "#hm-section",
+    end: "top top",
+  }
+}).set('.iphone-content', {display:"none"})
 
-})
+const phone_tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#phone-section",
+    start: "top top",
+    toggleActions: "play none none reverse",
+
+  }
+}).set('.iphone-content', {display:'flex'})
+  .from(phone_el, {rotate: 90, ease: "back", duration: 1, scale:.8})
+  .from(phone_el.querySelectorAll(".device-icon"),
+    {rotate: -90, transformOrigin: "50% 50%", ease: "back", duration: 1}, "<+.1")
+  .to('.iphone-content', { opacity:1, duration: .5}, "<-.1")
+  .to("#iphone", {scale: .9, ease: "power2", duration: 1.5,}, "<.2")
+
 
 const phone_scroll_tl = ScrollTrigger.create(
   {

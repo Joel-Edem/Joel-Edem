@@ -1,12 +1,12 @@
 {
-  "short_name": "",
-  "name": "",
+  "short_name": "Joel Edem",
+  "name": "Joel Edem Ametepeh: Portfolio",
   "icons": [{
-    "src": "icon.png",
+    "src": "favicon.png",
     "type": "image/png",
-    "sizes": "192x192"
+    "sizes": "150x150"
   }],
-  "start_url": "/?utm_source=homescreen",
+  "start_url": "/",
   "background_color": "#fafafa",
   "theme_color": "#fafafa"
 }
