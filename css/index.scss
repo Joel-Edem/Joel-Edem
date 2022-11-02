@@ -18,6 +18,11 @@
 
 }
 
+.container {
+  width: 100vw;
+  height: 100vh;
+}
+
 .m0 {
   margin: 0;
 }
@@ -47,10 +52,11 @@ body {
 }
 
 
-.h1{
-    font-size: 2em;
-    font-weight: bold;
+.h1 {
+  font-size: 2em;
+  font-weight: bold;
 }
+
 .bold {
   font-size: 1.8rem;
 }
@@ -75,7 +81,7 @@ body {
 }
 
 .mac-padding-box {
-  height: 55vh;
+  height: 100vh;
   width: 100vw;
 }
 
@@ -285,22 +291,23 @@ body {
 .imac-section {
   //opacity: 0;
   //background-color: black;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
-  display: flex;
+  display: grid;
   padding: 5%;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  //flex-direction: column;
+  //align-items: center;
+  //justify-content: center;
   place-items: center;
+  position: relative;
 
   .imac-container {
     display: grid;
     place-items: center;
     position: relative;
-    aspect-ratio: 987/831;
-    width: 100%;
-    //height: 100%;
+    //aspect-ratio: 987/831;
+    width: 70vw;
+    //height: auto;
 
 
     .imac {
@@ -308,9 +315,9 @@ body {
       display: flex;
       position: absolute;
       flex-direction: column;
-      width: 75%;
-      max-width: 70vw;
-      //height: 50%;
+      width: inherit;
+      //max-width: 70vw;
+      //height: inherit;
       //max-height: 50vh;
       aspect-ratio: 987/831;
 
@@ -364,7 +371,7 @@ body {
   }
 
   .imac-content {
-    width: 100%;
+    //width: 100%;
     display: flex;
     justify-content: center;
     position: relative;
@@ -468,8 +475,9 @@ body {
     padding: .5rem 1rem;
     border-radius: 8px;
     transition: all ease .3s;
-    &:hover{
-      box-shadow: rgba(252, 53, 126, 0.5) 4px 4px 20px, rgb(253, 54, 126) 0px 2px 4px;
+
+    &:hover {
+      box-shadow: rgba(252, 53, 126, 0.5) 4px 4px 20px, rgb(253, 54, 126) 0 2px 4px;
     }
   }
 
@@ -485,6 +493,21 @@ body {
   }
 }
 
+#memorize-section{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  justify-content: flex-start;
+  #memorize-iframe{
+    display: flex;
+    width: 100%;
+    height: 100% ;
+    //transform: scaleX(.5);
+
+  }
+}
 #contact-section {
 
   width: 100vw;

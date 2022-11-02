@@ -13,6 +13,11 @@
   font-family: Poppins, sans-serif, cursive;
 }
 
+.container {
+  width: 100vw;
+  height: 100vh;
+}
+
 .m0 {
   margin: 0;
 }
@@ -66,7 +71,7 @@ body {
 }
 
 .mac-padding-box {
-  height: 55vh;
+  height: 100vh;
   width: 100vw;
 }
 
@@ -227,28 +232,24 @@ body {
 }
 
 .imac-section {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
-  display: flex;
+  display: grid;
   padding: 5%;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   place-items: center;
+  position: relative;
 }
 .imac-section .imac-container {
   display: grid;
   place-items: center;
   position: relative;
-  aspect-ratio: 987/831;
-  width: 100%;
+  width: 70vw;
 }
 .imac-section .imac-container .imac {
   display: flex;
   position: absolute;
   flex-direction: column;
-  width: 75%;
-  max-width: 70vw;
+  width: inherit;
   aspect-ratio: 987/831;
 }
 .imac-section .imac-container .imac .imac-screen {
@@ -286,7 +287,6 @@ body {
   left: 0;
 }
 .imac-section .imac-content {
-  width: 100%;
   display: flex;
   justify-content: center;
   position: relative;
@@ -362,7 +362,7 @@ body {
   transition: all ease 0.3s;
 }
 #hm-section .hm-btn:hover {
-  box-shadow: rgba(252, 53, 126, 0.5) 4px 4px 20px, #fd367e 0px 2px 4px;
+  box-shadow: rgba(252, 53, 126, 0.5) 4px 4px 20px, #fd367e 0 2px 4px;
 }
 #hm-section .content {
   display: flex;
@@ -372,6 +372,20 @@ body {
   padding-left: 15%;
   padding-right: 15%;
   text-align: center;
+}
+
+#memorize-section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  justify-content: flex-start;
+}
+#memorize-section #memorize-iframe {
+  display: flex;
+  width: 100%;
+  height: 100%;
 }
 
 #contact-section {
