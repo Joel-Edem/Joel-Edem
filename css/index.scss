@@ -84,7 +84,11 @@ body {
   height: 100vh;
   width: 100vw;
 }
-
+.small{
+  margin-top: 0;
+  padding-top: 0;
+  color: #888888;
+}
 #welcome-section {
   height: 100vh;
   display: block;
@@ -293,11 +297,11 @@ body {
   //background-color: black;
   width: 100vw;
   height: 100vh;
-  display: grid;
+  display: flex;
   padding: 5%;
-  //flex-direction: column;
-  //align-items: center;
-  //justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   place-items: center;
   position: relative;
 
@@ -306,14 +310,14 @@ body {
     place-items: center;
     position: relative;
     //aspect-ratio: 987/831;
-    width: 70vw;
-    //height: auto;
+    width: 100%;
+    height: max-content;
 
 
     .imac {
 
       display: flex;
-      position: absolute;
+      position: relative;
       flex-direction: column;
       width: inherit;
       //max-width: 70vw;
@@ -402,6 +406,30 @@ body {
   background-color: black;
   overflow: hidden;
 
+  .heading-box {
+    width: 100%;
+    //height: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    place-items: center;
+
+    .w0 {
+      width: 0;
+    }
+
+    p {
+      justify-content: center;
+      color: var(--pink);
+      font-weight: bolder;
+      font-size: 2rem;
+      overflow: hidden;
+      display: flex;
+      font-family: "Bebas Neue", sans-serif;
+    }
+
+  }
+
   .parent {
     display: flex;
     align-items: center;
@@ -454,6 +482,47 @@ body {
 
     }
 
+    #memorize-slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 2696 / 1636;
+      transform: scaleX(0.527) scaleY(0.587);
+      top: 15.2%;
+      left: 1.25%;
+      background-color: white;
+      overflow: hidden;
+
+      iframe {
+        width: 100%;
+        height: 100%;
+
+      }
+
+      #close-game-btn {
+        position: absolute;
+        color: #c51717;
+        z-index: 99;
+        top: 2%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-200%);
+        background: transparent;
+        border: none;
+
+        svg {
+          width: 35px;
+          height: 35px;
+          cursor: pointer;
+
+          &:hover {
+            transform: scale(1.1);
+            transition: all 300ms ease;
+          }
+        }
+
+
+      }
+    }
 
     #hm_iphone_mockup {
       height: 100%;
@@ -481,6 +550,7 @@ body {
     }
   }
 
+
   .content {
     display: flex;
     flex-direction: column;
@@ -489,25 +559,49 @@ body {
     padding-left: 15%;
     padding-right: 15%;
     text-align: center;
+    overflow: hidden;
 
+  }
+
+  .display-none {
+    overflow: hidden;
+    height: 0;
+    //transform: scale(0);
   }
 }
 
-#memorize-section{
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  background-color: white;
-  display: flex;
-  justify-content: flex-start;
-  #memorize-iframe{
-    display: flex;
-    width: 100%;
-    height: 100% ;
-    //transform: scaleX(.5);
+//#memorize-section {
+//  position: relative;
+//  //width: 100%;
+//  height: 100vh;
+//  width: 100vw;
+//  //background-color: black;
+//  //display: flex;
+//  //justify-content: flex-start;
+//  iframe {
+//    width: 100%;
+//    height: 100%;
+//    //display: flex;
+//    //aspect-ratio: 9/3;
+//    top: 3.34%;
+//    left: 1.1%;
+//      aspect-ratio: 2696 / 1636;
+//
+//    //transform: scaleX(0.426) scaleY(0.313);
+//    position: relative;
+//
+//  }
+//}
 
-  }
-}
+//@media only screen and  (max-width: 450px) {
+//  #memorize-section {
+//
+//
+//
+//  }
+//
+//}
+
 #contact-section {
 
   width: 100vw;
@@ -525,11 +619,16 @@ body {
     column-gap: 20px;
 
     .social-icon {
+      display: flex;
+      width: 100%;
+      height: 100%;
 
       svg {
         fill: var(--pink);
-        width: 60px;
-        height: 69px;
+        //max-width: 60px;
+        //max-height: 69px;
+        width: 100%;
+        height: 100%;
 
         path {
           fill: var(--pink);
@@ -629,3 +728,4 @@ body {
     width: 100vw;
   }
 }
+

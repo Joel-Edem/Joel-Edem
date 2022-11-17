@@ -264,7 +264,11 @@
   </section>
   <div class="mac-padding-box"></div>
   <section id="hm-section">
-    <h3 id="hm-heading" class="bebas bold pink m0">HouseMaster</h3>
+    <div class="heading-box">
+      <p id="hm-heading" class="bebas bold pink m0">HouseMaster</p>
+      <p id="memorize-heading" class="bebas bold pink m0 w0">Memorize</p>
+    </div>
+
     <div id="hm-parent" class="parent">
       <video
         playsinline autoplay loop muted
@@ -291,6 +295,20 @@
            alt="photo of HouseMaster Home in page"
            class=" "
            id="hm_overlay_final">
+      <div id="memorize-slide" class="hide">
+        <iframe class="memorize-iframe" src="https://joel-edem.github.io/MemorizeJs/" frameborder="0">
+
+        </iframe>
+         <button id="close-game-btn" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle"
+                 viewBox="0 0 16 16">
+              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+              <path
+                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+            </svg>
+          </button>
+
+      </div>
       <img src="./img/iphone_mockup-min.png"
            alt="photo of HouseMaster Ghana dashboard"
            id="hm_iphone_mockup"
@@ -307,17 +325,29 @@
         Learn More
       </a>
     </div>
-  </section>
-  <div class="mac-padding-box"></div>
+    <div id="memorize-text-content" class="content display-none">
 
-<!--  <section id="memorize-section">-->
-<!--    <iframe src="http://localhost:65294" id="memorize-iframe" frameborder="0" allowfullscreen></iframe>-->
-<!--  </section>-->
-  <!--  <div class="mac-padding-box"></div>-->
+      <p class=" ">
+        <span class="pink">Memorize</span> is a fun card-matching, browser based, puzzle game.
+
+      </p>
+      <a href="https://github.com/Joel-Edem/MemorizeJs">
+        <p class="small">View source code</p>
+      </a>
+
+      <button type="button" href="#" id="play-btn" class="btn hm-btn">
+        Play
+      </button>
+    </div>
+  </section>
+  <div class="mac-padding-box" id="memorize-padding"></div>
+  <!--  <section id="memorize-section">-->
+  <!--        <iframe id="memorize-frame" src="http://localhost:51301/" frameborder="0" ></iframe>-->
+  <!--</section>-->
 
   <section id="contact-section">
 
-    <p class="bebas text-white bolder h1 contact-section-heading">
+    <p class="bebas text-white bolder text-center h1 contact-section-heading">
       Find Me Online
     </p>
     <div class="social-icons-parent">

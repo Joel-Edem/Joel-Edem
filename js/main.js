@@ -18,9 +18,7 @@ const welcome_tl = gsap.timeline({
   .from("#blob",   // BLOB ANIMATION
     {
       y: "-100vh", onComplete: () => {
-        console.log("complete")
         blob_anim.start()
-        console.log('starting')
       }, scale: 1, duration: 2.5, ease: 'back'
     }
   ).fromTo(document.querySelectorAll(".content-body"), // WELCOME SECTION TEXT ANIMATION
@@ -99,7 +97,7 @@ const imac_trigger = ScrollTrigger.create(
         {scale: .9, opacity: 1, }
       )
       .fromTo(".iphone-content", {scale: 1, opacity: 1,}, {scale: .5, opacity: 0, duration: .3,}, "<")
-      .fromTo(imac,{y: "10%",  duration: 1}, {y: "25%", }, ">")
+      .fromTo(imac,{y: "-10%",  duration: 1}, {y: 0, }, ">")
       .fromTo(".imac-content ", {y: "-50%", opacity: 0}, {y: 0, opacity: 1})
       .fromTo(imac.querySelectorAll(".device-icon"),
         {opacity: 0, y: 10}, {stagger: {each: 0.1}, opacity: 100, y: 0,}, "<-1"),
@@ -211,6 +209,67 @@ const hm_scrub = gsap.timeline({
     {left: "-10%"},
     {opacity: 1, ease: "power3.easeIn", duration: 1, left: "0"})
 
+const memorize_slide =document.querySelector("#memorize-slide")
+const memorize_tl = ScrollTrigger.create({
+  trigger: "#memorize-padding",
+  // pin: true,
+  // markers: true,
+  start: "top center",
+  pinSpacing: false,
+  toggleActions: "play complete none reverse",
+  animation: gsap.timeline()
+    .to("#hm-text-content", {height:0,  y:"100%", ease: "power3.easeIn",  duration:0.5})
+    .to("#memorize-text-content", {height: "auto",  ease: "power3.easeIn", duration:0.5}, "<")
+    .to(["#hm_mac_overlay", "#hm_overlay_final", "#memorize-slide"], {zIndex:5, duration:0})
+    .to(["#hm_mac_overlay", "#hm_overlay_final", ], {scale:"+=.05", duration:1})
+    .to("#memorize-slide", {scaleY:"+=.05", scaleX:"+=.04", duration:1}, "<")
+    .to("#hm_ipad_mockup", {x:"-50%", duration:.5, ease: "power3.easeIn",},"<")
+    .to("#hm_iphone_mockup", {x:"-50%", duration:.5, ease: "power3.easeIn",}, "<")
+    // .set("#memorize-slide", {opacity:1})
+    .fromTo(memorize_slide, {opacity:0, duration:0.01, }, {opacity:1 },"<-0.5")
+       .to("#hm-heading",  { duration:.5, width: 0}, "")
+    .to("#memorize-heading", {duration:.5 ,width:'auto'} ,"<")
+    // .fromTo(memorize_slide.querySelector('iframe'), {y:"-100%", duration:.5, ease:"easeIn"}, {y:0, }, "<")
+
+  // endTrigger:"#contact-section",
+  // end: "top top"
+
+})
+
+const play_memorize_btn = document.querySelector("#play-btn")
+const quit_btn = document.querySelector("#close-game-btn")
+
+const game_zoom_anim = gsap.timeline({paused:true})
+    .to("#hm-parent",
+      {
+        transform: "unset",
+        width:"100vw",
+        height:"100vh",
+        maxWidth:"100vw",
+        maxHeight:"100vh",
+        position:"absolute",
+        duration:0
+        })
+        .fromTo("#memorize-slide",
+          {top: "15.2%", left: "1.25%" , width:"100%", height:"100%",},
+          {aspectRatio:"unset", top:0, left:0, width:"100vw", height:"100vh",
+            transform: "unset",}
+        )
+    .to("body", {height:"100vh", overflow:"hidden",})
+    .to("#memorize-slide",
+    { height:"100vh", width:"100vw", duration:1, })
+    .to("#close-game-btn", {y:0, duration:1 }, "<")
+
+play_memorize_btn.addEventListener("click", ()=>{
+
+  game_zoom_anim.play()
+})
+
+
+quit_btn.addEventListener("click", (e)=>{
+  game_zoom_anim.reverse()
+})
+
 const contact_tl = gsap.timeline(
   {
     scrollTrigger: {
@@ -265,4 +324,3 @@ function handle_view_contact(e) {
   e.target.dataset.link ? show_anim(e.target) : null
 
 }
-

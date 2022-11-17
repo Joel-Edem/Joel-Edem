@@ -75,6 +75,12 @@ body {
   width: 100vw;
 }
 
+.small {
+  margin-top: 0;
+  padding-top: 0;
+  color: #888888;
+}
+
 #welcome-section {
   height: 100vh;
   display: block;
@@ -234,8 +240,11 @@ body {
 .imac-section {
   width: 100vw;
   height: 100vh;
-  display: grid;
+  display: flex;
   padding: 5%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   place-items: center;
   position: relative;
 }
@@ -243,11 +252,12 @@ body {
   display: grid;
   place-items: center;
   position: relative;
-  width: 70vw;
+  width: 100%;
+  height: max-content;
 }
 .imac-section .imac-container .imac {
   display: flex;
-  position: absolute;
+  position: relative;
   flex-direction: column;
   width: inherit;
   aspect-ratio: 987/831;
@@ -302,6 +312,25 @@ body {
   background-color: black;
   overflow: hidden;
 }
+#hm-section .heading-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  place-items: center;
+}
+#hm-section .heading-box .w0 {
+  width: 0;
+}
+#hm-section .heading-box p {
+  justify-content: center;
+  color: var(--pink);
+  font-weight: bolder;
+  font-size: 2rem;
+  overflow: hidden;
+  display: flex;
+  font-family: "Bebas Neue", sans-serif;
+}
 #hm-section .parent {
   display: flex;
   align-items: center;
@@ -345,6 +374,40 @@ body {
   top: 18.9%;
   left: 4%;
 }
+#hm-section .parent #memorize-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 2696/1636;
+  transform: scaleX(0.527) scaleY(0.587);
+  top: 15.2%;
+  left: 1.25%;
+  background-color: white;
+  overflow: hidden;
+}
+#hm-section .parent #memorize-slide iframe {
+  width: 100%;
+  height: 100%;
+}
+#hm-section .parent #memorize-slide #close-game-btn {
+  position: absolute;
+  color: #c51717;
+  z-index: 99;
+  top: 2%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-200%);
+  background: transparent;
+  border: none;
+}
+#hm-section .parent #memorize-slide #close-game-btn svg {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+#hm-section .parent #memorize-slide #close-game-btn svg:hover {
+  transform: scale(1.1);
+  transition: all 300ms ease;
+}
 #hm-section .parent #hm_iphone_mockup {
   height: 100%;
   transform: scale(0.25);
@@ -362,7 +425,7 @@ body {
   transition: all ease 0.3s;
 }
 #hm-section .hm-btn:hover {
-  box-shadow: rgba(252, 53, 126, 0.5) 4px 4px 20px, #fd367e 0 2px 4px;
+  box-shadow: rgba(252, 53, 126, 0.5) 4px 4px 20px, rgb(253, 54, 126) 0 2px 4px;
 }
 #hm-section .content {
   display: flex;
@@ -372,20 +435,11 @@ body {
   padding-left: 15%;
   padding-right: 15%;
   text-align: center;
+  overflow: hidden;
 }
-
-#memorize-section {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  background-color: white;
-  display: flex;
-  justify-content: flex-start;
-}
-#memorize-section #memorize-iframe {
-  display: flex;
-  width: 100%;
-  height: 100%;
+#hm-section .display-none {
+  overflow: hidden;
+  height: 0;
 }
 
 #contact-section {
@@ -403,10 +457,15 @@ body {
   align-items: center;
   column-gap: 20px;
 }
+#contact-section .social-icons-parent .social-icon {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
 #contact-section .social-icons-parent .social-icon svg {
   fill: var(--pink);
-  width: 60px;
-  height: 69px;
+  width: 100%;
+  height: 100%;
 }
 #contact-section .social-icons-parent .social-icon svg path {
   fill: var(--pink);
@@ -449,7 +508,6 @@ body {
   #welcome-section .welcome-content .welcome-content-title {
     width: unset;
   }
-
   .skill-section {
     --iphone-width: 50vw;
   }
@@ -461,7 +519,6 @@ body {
   .skill-section .imac-section .imac-container .imac {
     width: 50%;
   }
-
   .mac-padding-box {
     height: 100vh;
     width: 100vw;
